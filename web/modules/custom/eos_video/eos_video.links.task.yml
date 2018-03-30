@@ -1,0 +1,23 @@
+# Video routing definition
+
+entity.video.canonical:
+  route_name: entity.video.canonical
+  base_route: entity.video.canonical
+  title: 'View'
+
+entity.video.edit_form:
+  route_name: entity.video.edit_form
+  base_route: entity.video.canonical
+  title: 'Edit'
+
+entity.video.version_history:
+  route_name: entity.video.version_history
+  base_route: entity.video.canonical
+  title: 'Revisions'
+
+entity.video.delete_form:
+  route_name:  entity.video.delete_form
+  base_route:  entity.video.canonical
+  title: Delete
+  weight: 10
+

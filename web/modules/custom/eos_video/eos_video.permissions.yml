@@ -1,0 +1,30 @@
+add video entities:
+  title: 'Create new Video entities'
+
+administer video entities:
+  title: 'Administer Video entities'
+  description: 'Allow to access the administration form to configure Video entities.'
+  restrict access: true
+
+delete video entities:
+  title: 'Delete Video entities'
+
+edit video entities:
+  title: 'Edit Video entities'
+
+view published video entities:
+  title: 'View published Video entities'
+
+view unpublished video entities:
+  title: 'View unpublished Video entities'
+
+view all video revisions:
+  title: 'View all Video revisions'
+
+revert all video revisions:
+  title: 'Revert all Video revisions'
+  description: 'Role requires permission <em>view Video revisions</em> and <em>edit rights</em> for video entities in question or <em>administer video entities</em>.'
+
+delete all video revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Video revisions</em> and <em>delete rights</em> for video entities in question or <em>administer video entities</em>.'

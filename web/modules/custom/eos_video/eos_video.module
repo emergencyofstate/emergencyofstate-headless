@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * Contains eos_video.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function eos_video_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the eos_video module.
+    case 'help.page.eos_video':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Provides a video entity') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function eos_video_theme() {
+  $theme = [];
+  $theme['video'] = [
+    'render element' => 'elements',
+    'file' => 'video.page.inc',
+    'template' => 'video',
+  ];
+  $theme['video_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'video.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+* Implements hook_theme_suggestions_HOOK().
+*/
+function eos_video_theme_suggestions_video(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#video'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'video__' . $sanitized_view_mode;
+  $suggestions[] = 'video__' . $entity->bundle();
+  $suggestions[] = 'video__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'video__' . $entity->id();
+  $suggestions[] = 'video__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}

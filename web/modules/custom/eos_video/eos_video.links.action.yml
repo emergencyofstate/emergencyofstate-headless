@@ -1,0 +1,11 @@
+entity.video.add_form:
+  route_name: entity.video.add_page
+  title: 'Add Video'
+  appears_on:
+    - entity.video.collection
+entity.video_type.add_form:
+  route_name: entity.video_type.add_form
+  title: 'Add Video type'
+  appears_on:
+    - entity.video_type.collection
+

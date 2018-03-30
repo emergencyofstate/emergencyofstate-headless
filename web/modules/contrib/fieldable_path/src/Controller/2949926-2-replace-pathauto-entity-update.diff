@@ -1,0 +1,19 @@
+diff --git a/src/Controller/FieldablePathController.php b/src/Controller/FieldablePathController.php
+index 5ffd9f9..e2d8503 100644
+--- a/src/Controller/FieldablePathController.php
++++ b/src/Controller/FieldablePathController.php
+@@ -133,13 +133,7 @@ class FieldablePathController {
+       return;
+     }
+ 
+-    // Call proper pathauto hooks.
+-    if ($op == 'insert') {
+-      pathauto_entity_insert($entity);
+-    }
+-    elseif ($op == 'update') {
+-      pathauto_entity_update($entity);
+-    }
++    \Drupal::service('pathauto.generator')->updateEntityAlias($entity, $op);
+   }
+ 
+   /**

@@ -1,0 +1,18 @@
+
+# Video menu items definition
+entity.video.collection:
+  title: 'Video list'
+  route_name: entity.video.collection
+  description: 'List Video entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Video type menu items definition
+entity.video_type.collection:
+  title: 'Video type'
+  route_name: entity.video_type.collection
+  description: 'List Video type (bundles)'
+  parent: system.admin_structure
+  weight: 99
+
